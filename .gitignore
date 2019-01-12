@@ -1,2 +1,6 @@
 Thedegreeisalie.github.io
 Thedegreeisalie.github.io/*
+*.swp
+*.exe
+*.o
+*.out
