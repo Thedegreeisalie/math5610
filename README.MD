@@ -1,6 +1,10 @@
 # Math 5610 Computational Linear Algebra
 
-This repository contains the homework and other notes for the author
+This repository contains the homework and other notes for Jer Moore 
+### Homework Links
+
+1. [homework1](https://Thedegreeisalie.github.io/math5610/homework/1.md)
+
 
 ### Links for content for Math 5610:
 
