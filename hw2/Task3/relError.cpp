@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include "relError.h" 
 // Task: Implement a method/routine that computes and returns the relative error in the approximation of a number x another number y. Also create an entrx for the method in xour software manual.
 // relError(applroximation, value)
 // This is done hideously by enumerating all the cases. This could be done better

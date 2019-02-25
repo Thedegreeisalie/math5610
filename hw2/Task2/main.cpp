@@ -1,5 +1,8 @@
 #include <iostream>
-#include "libMath5610.h"
+
+double absError(double x, double y);
+float absError(float x, float y);
+int absError(int x, int y);
 
 int main() {
 	int a = 1;

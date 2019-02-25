@@ -1,5 +1,8 @@
 #include <iostream>
-#include "libMath5610.h"
+
+double relError(double x, double y);
+float relError(float x, float y);
+int relError(int x, int y);
 
 int main() {
 	int a = 1;

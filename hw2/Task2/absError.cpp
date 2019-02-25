@@ -1,8 +1,10 @@
-#include <cstdlib>
 // Task: Implement a method/routine that computes and returns the absolute error in the approximation of a number x by another number y. Also create an entry for the method in your software manual
 // in a frost course to numerical methods absolute Error in v is the absolute value of the difference of u and v
 // |u-v| or abs(u-v)
 
+#include <cstdlib>
+
+#include "absError.h" 
 // This is done hideously by enumerating all the cases. This could be done better
 double absError(double x, double y) {
 	return std::abs(y - x) ;
