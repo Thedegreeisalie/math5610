@@ -1,28 +1,6 @@
-#include <iostream>
-#include <random>
-#include <vector>
-#include <chrono>
-
+#include "generateNbyMMatrix.h"
 
 //Task: Write a routine that will generate a random matrix of a given size. That is, input the number of rows and columns and output the matrix created by setting each entry in the matrix to a random value between zero and one. 
-
-std::vector<std::vector<double>> genererateNbyMmatrix(int n, int m);
-
-int main(int argc, char *argv[]) {
-
-
-	std::vector<std::vector<double>> nBymMatrix;
-	int n = std::stoi(argv[1]);
-	int m = std::stoi(argv[2]);
-	nBymMatrix = genererateNbyMmatrix(n,m);
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < n; ++j) {
-				std::cout << nBymMatrix[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	return 0;
-}
 
 std::vector<std::vector<double>> genererateNbyMmatrix(int n, int m) {
 	//Have to do some seeding for this to generate some numbers	
