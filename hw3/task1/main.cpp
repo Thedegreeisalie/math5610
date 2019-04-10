@@ -21,6 +21,9 @@ int main(int argc, char *argv[]) {
 		v1.push_back(unif(re));
 	}
 
+	for (int i = 0; i < n; i++) {
+		std::cout << v1[i] <<  " " << v2[i] << std::endl;
+	}
 	std::cout << absError2NormVector(v1, v2) << std::endl;
 	
 	return 0;
