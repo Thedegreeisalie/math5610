@@ -2,12 +2,10 @@
 #include "generateSymetricNbyNMatrix.h"
 
 std::vector<std::vector<double>> generateSymetricNbyNMatrix(int n){ 
-
 	typedef std::chrono::high_resolution_clock clock;
 	clock::time_point begining = clock::now();
 
 	std::vector<std::vector<double> > matrix;
-	
 	for (int i = 0; i < n; i++) {
 		std::vector<double> Row;
 		// allocate space
@@ -16,7 +14,6 @@ std::vector<std::vector<double>> generateSymetricNbyNMatrix(int n){
 		}
 		matrix.push_back(Row);
 	}
-
 	for (int i =0; i < n; i++) {
 		for(int j =0; j < n; j++) {
 			std::uniform_real_distribution<double> unif(1, 0);

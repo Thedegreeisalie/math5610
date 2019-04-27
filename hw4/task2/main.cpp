@@ -2,7 +2,7 @@
 #include <iostream>
 
 std::vector<std::vector<double>> genererateNbyMmatrix(int n, int m);
-std::vector<std::vector<double>> matrixProduct(std::vector<std::vector<double>>, int, int, std::vector<std::vector<double>>, int, int);
+std::vector<std::vector<double>> matrixAdd(std::vector<std::vector<double>>, std::vector<std::vector<double>>);
 
 int main(int argc, char *argv[]) {	
 
@@ -12,12 +12,10 @@ int main(int argc, char *argv[]) {
 	
 	int m = std::stoi(argv[1]);
 	int n = std::stoi(argv[2]);
-	int o = std::stoi(argv[3]);
-	int p = std::stoi(argv[4]);
 
 	nByMMatrix1	= genererateNbyMmatrix(m, n);
 
-	nByMMatrix2	= genererateNbyMmatrix(o, p);
+	nByMMatrix2	= genererateNbyMmatrix(m, n);
 	
 	std::cout << "The first matrix is " << n << " columns by " << m << std::endl;
 
@@ -28,20 +26,20 @@ int main(int argc, char *argv[]) {
 		std::cout << std::endl;
 	}
 	
-	std::cout << "The second matrix is " << p << " columns by " << o << std::endl;
+	std::cout << "The second matrix is " << n << " columns by " << m << std::endl;
 	
-	for (int i = 0; i < o; i++) {
-		for (int j = 0; j < p; j++) {
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
 				std::cout << nByMMatrix2[i][j] << " ";
 		}
 		std::cout << std::endl;
 	}
 	
-	product = matrixProduct(nByMMatrix1, m, n, nByMMatrix2, o, p);
+	product = matrixAdd(nByMMatrix1, nByMMatrix2);
 
-	std::cout << "The product matrix should be " << n << " by " << o << std::endl;
+	std::cout << "The product matrix should be " << n << " by " << m << std::endl;
 
-	for (int i = 0; i < o; i++) {
+	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
 				std::cout << product[i][j] << " ";
 		}

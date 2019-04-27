@@ -5,4 +5,5 @@
 *.out
 */main
 build/
+*/lib/*
 
