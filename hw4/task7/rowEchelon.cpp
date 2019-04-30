@@ -5,16 +5,10 @@ std::vector<std::vector<double>> rowEchelon(std::vector<std::vector<double>> mat
 	
 	int n = matrix.front().size();
 	//start with the first row
-//	for( int i = 1; i < n; i++) {
-//		double factor = matrix[i][0] / matrix[0][0];
-//		for (int j = 0; j < n; j++) {
-//			matrix[i][j] = matrix[i][j] - (factor * matrix[0][j]);
-//		}
-//	}
 
 	for (int k = 0; k < n-1; k++) {
 		for (int i = k+1; i < n; i++) {
-			double factor = matrix[i][k] / matrix[k][k];
+			double factor = (matrix[i][k] / matrix[k][k]);
 			for (int j = k; j < n; j++) {
 				matrix[i][j] =  matrix[i][j] - (factor * matrix[k][j]);
 			}
