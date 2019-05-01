@@ -4,15 +4,13 @@
 #include <chrono>
 
 std::vector<std::vector<double>> generateSymetricNbyNMatrix(int);
-
-std::vector<double> rowEchelonSolution(std::vector<std::vector<double>> matrix, std::vector<double> b);
+std::vector<double> solveLUFactorization(std::vector<std::vector<double>>, std::vector<double>);
 
 int main(int argc, char *argv[]) {
 
 	int n = std::stoi(argv[1]);
-
+	
 	std::vector<double> b;
-	std::vector<double> x;
 	
 	typedef std::chrono::high_resolution_clock clock;
 	clock::time_point begining = clock::now();
@@ -24,25 +22,26 @@ int main(int argc, char *argv[]) {
 		double value = unif(re);
 		b.push_back(value);
 	}
-
+	
 	std::vector<std::vector<double>> Matrix = generateSymetricNbyNMatrix(n);
 
-//	for (int i = 0; i < n; i++) {
-//		for (int j = 0; j < n; j++) {
-//			std::cout << Matrix[i][j] << " ";
-//		}
-//		std::cout << std::endl;
-//	}
-//	
-//	std::cout << "Is the original matrix, A" << std::endl;
+	std::vector<double> x = solveLUFactorization(Matrix, b);
 	
-	x = rowEchelonSolution(Matrix, b);
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			std::cout << Matrix[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}
+	
+	std::cout << "Is the original matrix, A" << std::endl;
+
 
 	for (int i = 0; i < n; i++) {
 		std::cout << x[i] << std::endl;
 	}
-
-	std::cout << "Is the output vector x"  << std::endl;
+	
+	std::cout << "Is the solution x" << std::endl;
 	
 	return 0;
 }

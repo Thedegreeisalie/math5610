@@ -5,7 +5,7 @@
 
 std::vector<std::vector<double>> generateSymetricNbyNMatrix(int);
 
-std::vector<double> rowEchelonSolution(std::vector<std::vector<double>> matrix, std::vector<double> b);
+std::vector<double> eliminationBackSubstitution(std::vector<std::vector<double>> matrix, std::vector<double> b);
 
 int main(int argc, char *argv[]) {
 
@@ -27,22 +27,12 @@ int main(int argc, char *argv[]) {
 
 	std::vector<std::vector<double>> Matrix = generateSymetricNbyNMatrix(n);
 
-//	for (int i = 0; i < n; i++) {
-//		for (int j = 0; j < n; j++) {
-//			std::cout << Matrix[i][j] << " ";
-//		}
-//		std::cout << std::endl;
-//	}
-//	
-//	std::cout << "Is the original matrix, A" << std::endl;
-	
-	x = rowEchelonSolution(Matrix, b);
+	x = eliminationBackSubstitution(Matrix, b);
 
-	for (int i = 0; i < n; i++) {
-		std::cout << x[i] << std::endl;
+	for (int i =0; i < n; i++) {
+		std::cout << x[i] << " ";
 	}
-
-	std::cout << "Is the output vector x"  << std::endl;
 	
+	std::cout << std::endl;;
 	return 0;
 }
