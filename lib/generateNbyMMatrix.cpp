@@ -2,7 +2,7 @@
 
 //Task: Write a routine that will generate a random matrix of a given size. That is, input the number of rows and columns and output the matrix created by setting each entry in the matrix to a random value between zero and one. 
 
-std::vector<std::vector<double>> genererateNbyMmatrix(int rows, int cols) {
+std::vector<std::vector<double>> generateNbyMmatrix(int rows, int cols) {
 	//Have to do some seeding for this to generate some numbers	
 	typedef std::chrono::high_resolution_clock clock;
 	clock::time_point begining = clock::now();

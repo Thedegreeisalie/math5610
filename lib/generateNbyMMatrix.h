@@ -5,6 +5,6 @@
 #include <chrono>
 #include <random>
 
-std::vector<std::vector<double>> genererateNbyMmatrix(int n, int m); 
+std::vector<std::vector<double>> generateNbyMmatrix(int n, int m); 
 
 #endif

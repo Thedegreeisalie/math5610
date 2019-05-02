@@ -2,7 +2,7 @@
 #include <iostream>
 
 std::vector<std::vector<double>> genererateNbyMmatrix(int n, int m);
-std::vector<std::vector<double>> matrixProduct(std::vector<std::vector<double>>, int, int, std::vector<std::vector<double>>, int, int);
+std::vector<std::vector<double>> matrixProduct(std::vector<std::vector<double>>, std::vector<std::vector<double>>);
 
 int main(int argc, char *argv[]) {	
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 		std::cout << std::endl;
 	}
 	
-	product = matrixProduct(nByMMatrix1, m, n, nByMMatrix2, o, p);
+	product = matrixProduct(nByMMatrix1, nByMMatrix2);
 
 	std::cout << "The product matrix should be " << n << " by " << o << std::endl;
 
