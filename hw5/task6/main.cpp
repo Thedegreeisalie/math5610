@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 	approxB = matrixVectorProduct(Matrix, x);
 
 	for(int i =0; i < n; i++) {
-		std::cout << b[i] << approxB[i] << std::endl;
+		std::cout << b[i] << " " << approxB[i] << std::endl;
 	}
 	
 	return 0;

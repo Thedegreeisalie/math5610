@@ -4,46 +4,15 @@ std::vector<double> NaturalEquations(std::vector<std::vector<double>> matrix, st
 	
 	int n = matrix.front().size();
 
-	std::vector<double> x;
-	std::vector<double> y;
-	std::vector<double> z;
-	
-	std::vector<std::vector<double>> aT;	
+	std::vector<std::vector<double>> B = matrixProduct(transpose(matrix), matrix);
 
-	for (int i = 0; i < n; i++) {
-		std::vector<double> Row;
-		for (int j = 0; j < n; j++) {
-			Row.push_back(matrix[j][i]);
-		}
-		aT.push_back(Row);
-	}
-
-	for (int k = 0; k < n-1; k++) {
-		matrix[k][k] = sqrt(abs(matrix[k][k]));
-		for (int i = k+1; i < n; i++) {
-			matrix[i][k] = matrix[i][k]/matrix[k][k];
-		}
-		for (int j = k+1; j < n; j++) {
-			for (int i = j; i < n; i++) {
-				matrix[i][j] = matrix[i][j] - matrix[i][k]*matrix[j][k];
-			}
-		}
-	}
+	std::vector<double> y = matrixVectorProduct(transpose(matrix), b);
 	
-	std::vector<std::vector<double>> gT;	
-	for (int i = 0; i < n; i++) {
-		std::vector<double> Row;
-		for (int j = 0; j < n; j++) {
-			Row.push_back(matrix[j][i]);
-		}
-		gT.push_back(Row);
-	}
+	std::vector<std::vector<double>> L = CholeskyFactorization(B);	
+		
+	std::vector<double> z = solveLowerTriangular(L, y);
 	
-	y = matrixVectorProduct(aT, b);
-	
-	z = solveLowerTriangular(matrix, y);
-	
-	x = solveUpperTriangular(gT, z);
+	std::vector<double> x = solveUpperTriangular(transpose(L), z);
 
 	return x;
 }
